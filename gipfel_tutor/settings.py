@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+# checking
 import os
 import sys
 import dj_database_url
@@ -41,7 +41,6 @@ ALLOWED_HOSTS = [
     ".herokuapp.com",
     "localhost",
     "127.0.0.1",
-    "tutor-sphere-cxh8freyahc2f6bd.canadacentral-01.azurewebsites.net",
 ]
 
 
@@ -151,7 +150,7 @@ TEMPLATES = [
     },
 ]
 
-SOCIALACCOUNT_ENABLED = False
+SOCIALACCOUNT_ENABLED = True
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -180,13 +179,13 @@ elif "DATABASE_URL" in os.environ:
 else:
     DATABASES = {
         "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv("PGDATABASE", "postgres"),
-        "USER": os.getenv("PGUSER", "default_user"),
-        "PASSWORD": os.getenv("PGPASSWORD", "default_password"),
-        "HOST": os.getenv("PGHOST", "localhost"),
-        "PORT": os.getenv("PGPORT", "5432"),
-    }
+             "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": 'TutorSphere',
+        "USER": 'postgres',
+        "PASSWORD": 'admin',
+        "HOST": 'localhost',
+        "PORT": '5432',
+        }
     }
 
 
